@@ -8,12 +8,24 @@ window.onload = function(){
 		// Returnera den konverterade strängen.
 		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
 	
+	    if (str === '') {
+	        throw new Error('Fel! Vänligen ange en text att omvandla.');
+	    }
 
+	    var myString = '';
 
+	    for (var i = 0; i < str.length; i++) {
+	        var char = str[i].toUpperCase();
+	        if (char !== str[i]) {
+	            myString += char;
+	        } else {
+	            myString += char.toLowerCase();
+	        }
+	    }
 
+	    myString = myString.replace(/a/gi, '#');
 
-
-
+	    return myString;
 	};
 	// ------------------------------------------------------------------------------
 
