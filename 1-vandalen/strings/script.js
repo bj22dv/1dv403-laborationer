@@ -2,18 +2,14 @@
 
 window.onload = function(){
 
-	// I denna funktion ska du skriva koden för att hantera "spelet"
 	var convertString = function(str){
-		// Plats för förändring.		
-		// Returnera den konverterade strängen.
-		// Vid fel, kasta ett undantag med ett meddelande till användaren. 
-	
+	//Kontrollerar att text är angiven.
 	    if (str === '') {
 	        throw new Error('Fel! Vänligen ange en text att omvandla.');
 	    }
 
 	    var myString = '';
-
+        //Ändrar stora bokstäver till små och små till stora.
 	    for (var i = 0; i < str.length; i++) {
 	        var char = str[i].toUpperCase();
 	        if (char !== str[i]) {
@@ -22,7 +18,7 @@ window.onload = function(){
 	            myString += char.toLowerCase();
 	        }
 	    }
-
+        //Byter ut a och A mot #.
 	    myString = myString.replace(/a/gi, '#');
 
 	    return myString;
